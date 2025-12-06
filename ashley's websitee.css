@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashley's Personal Page</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #ffd6e8, #ffb6d5, #ffcee1);
+            background-size: 300% 300%;
+            animation: bgAnimate 10s infinite alternate ease-in-out;
+            color: #4b2a3f;
+        }
+
+        @keyframes bgAnimate {
+            0% { background-position: left top; }
+            100% { background-position: right bottom; }
+        }
+
+        .floating-heart {
+            position: fixed;
+            width: 25px;
+            height: 25px;
+            background: pink;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 6s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-40px); }
+            100% { transform: translateY(0px); }
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff8cb3, #ff7aa8);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 20px rgba(255, 126, 176, 0.4);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.2rem;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.3rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        nav {
+            background: #ffe2ee;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 8px rgba(255, 182, 193, 0.3);
+            animation: slideDown 0.8s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: #ff2f7a;
+            font-weight: bold;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        /* GLOW EFFECT WHEN CLICKED */
+        nav a:active::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            border-radius: 30px;
+            box-shadow: 0 0 20px 5px #ff66a3;
+            animation: glowPulse 0.5s forwards;
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 0px 0px #ff66a3; opacity: 1; }
+            100% { box-shadow: 0 0 20px 5px #ff66a3; opacity: 0; }
+        }
+
+        nav a:hover {
+            background: #ff99c9;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 50px;
+        }
+
+        section {
+            background: white;
+            width: 70%;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 6px 16px rgba(255, 182, 193, 0.5);
+            animation: popUp 1s ease;
+        }
+
+        @keyframes popUp {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        section img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #ff9dc6;
+            box-shadow: 0 4px 20px rgba(255, 152, 185, 0.8);
+            animation: floatPic 4s infinite ease-in-out;
+        }
+
+        @keyframes floatPic {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        section h2 {
+            color: #ff2f7a;
+            font-size: 2rem;
+        }
+
+        section p {
+            font-size: 1.1rem;
+        }
+
+        aside {
+            width: 260px;
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 6px 16px rgba(255, 182, 193, 0.5);
+            animation: popUp 1.2s ease;
+        }
+
+        aside h3 {
+            color: #ff2f7a;
+        }
+
+        footer {
+            background: #ff8dbf;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-heart" style="top:10%; left:5%; animation-delay:0s;"></div>
+    <div class="floating-heart" style="top:40%; left:90%; animation-delay:1s;"></div>
+    <div class="floating-heart" style="top:70%; left:20%; animation-delay:2s;"></div>
+    <div class="floating-heart" style="top:85%; left:70%; animation-delay:3s;"></div>
+
+    <header>
+        <h1>Hi, I'm Ashley Edaniol</h1>
+        <p>A dedicated and motivated individual with a strong passion for learning and professional growth.</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#goals">Goals</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <img src="c:\Users\LENOVO\Downloads\7e269a84-e27f-4135-bb10-fcee26cf4c5f.jpeg" alt="Ashley" />
+            <h2>About Me</h2>
+            <p>Hi! I'm Ashley Edaniol — a creative and curious person who loves learning about design and aesthetics.</p>
+
+            <h2 id="hobbies">My Hobbies</h2>
+            <p>I love drawing, listening to music, watching movies, and creating digital art.</p>
+
+            <h2 id="goals">My Goals</h2>
+            <p>My goal is to become a successful web developer & designer. I want to inspire others and create beautiful things online. 🌷</p>
+        </section>
+
+        <aside>
+            <h3>Quick Info</h3>
+            <ul style="list-style:none; padding:0;">
+                <li><strong>Name:</strong> Ashley Edaniol</li>
+                <li><strong>Nickname:</strong> Akim</li>
+                <li><strong>Age:</strong> 18</li>
+                <li><strong>Favorite Color:</strong> Pink</li>
+                <li><strong>Favorite Movie:</strong> She's the Man</li>
+                <li><strong>Dream Job:</strong> Web Designer</li>
+                <li><strong>Motto:</strong> “Stay Present Darling!”</li>
+            </ul>
+
+            <h3 id="contact">Contact</h3>
+            <p>Email: <a href="mailto:ashleyedaniol@example.com">ashleyedaniol@example.com</a></p>
+            <p>Instagram: <a href="#">@axhleydnl</a></p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ashley EDANIOL | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
